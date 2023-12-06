@@ -53,6 +53,7 @@ a:hover {
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+  z-index: 10;
 }
 .video-wrap.active {
   top: 50%;
