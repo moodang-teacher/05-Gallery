@@ -38,9 +38,16 @@ a:hover {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
-
-  display: none; /* jQeury: fadeIn/fadeOut */
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
+  user-select: none;
   backdrop-filter: blur(5px);
+}
+body.active .dim {
+  opacity: 1;
+  pointer-events: auto;
+  user-select: auto;
 }
 .video-wrap {
   position: fixed;
@@ -49,13 +56,14 @@ a:hover {
   transform: translate(-50%, -50%);
   width: 1024px;
   border: 10px solid #000;
+  background: #000;
 
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
   z-index: 10;
 }
-.video-wrap.active {
+body.active .video-wrap {
   top: 50%;
   opacity: 1;
   pointer-events: auto;
