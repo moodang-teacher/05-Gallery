@@ -35,8 +35,11 @@ for (let i = 0; i < targetEl.length; i++) {
 }
 
 $videoList.addEventListener('click', (e) => {
-  if (!(e.target.tagName === 'LI')) return;
-  let index = Array.from(e.target.parentElement.children).indexOf(e.target);
+  const $this = e.target;
+  if ($this.tagName !== 'LI') return;
+
+  // [...el.parentNode.children].indexOf(el);
+  let index = [...$this.parentNode.children].indexOf($this);
 
   let videoLink = imgArr[index].video + '?autoplay=1';
   let videoTitle = imgArr[index].title;
