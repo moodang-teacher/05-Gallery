@@ -35,7 +35,7 @@ for (let i = 0; i < targetEl.length; i++) {
 }
 
 $videoList.addEventListener('click', (e) => {
-  if (!e.target.tagName === 'LI') return;
+  if (!(e.target.tagName === 'LI')) return;
   let index = Array.from(e.target.parentElement.children).indexOf(e.target);
 
   let videoLink = imgArr[index].video + '?autoplay=1';
